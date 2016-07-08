@@ -30,4 +30,24 @@
 
 */
 
-// YOUR CODE HERE
+function splitString(stringToSplit) { //sets the function
+  var removeSpclChar = stringToSplit.replace(/[^a-zA-Z ]/g, ""); // removes special character
+  var arrayOfStrings = removeSpclChar.split(''); //store splitted string as arrayOfStrings
+  var sortedString = arrayOfStrings.sort(); //the previous array will be sorted alphabetically
+  var current = null;
+  var count = 0; // start the count at zero for the array
+  for (var i = 0; i < sortedString.length; i++) { // .length will count the number of indexes in the array
+      if (sortedString[i] != current) { // if the string does not equal the value of the current, the count will be just one for that letter
+          if (count > 0) { //if count is more than one, it will add one to current
+                console.log(current + ' = ' + count);
+              }
+              current = sortedString[i];
+              count = 1;// adds one to repetition
+          } else { //if same character add one
+              count++;
+          }
+      }
+      if (count > 0) { // states the repetition count of the letter
+          console.log(current + ' = ' + count);
+        }
+}

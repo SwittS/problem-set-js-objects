@@ -32,5 +32,12 @@
   - To make your output more relevant, can you sort by days remaining (ascending)?
 
 */
+function daysUntilDate(date){
+   return Math.round((Date.now() - Date.parse(date))/86400000);
+}
 
-// YOUR CODE HERE
+function birthdayReminder(){
+    this.name = 'Jack';
+    this.birthday = date;
+    return console.log(name + birthday);
+}

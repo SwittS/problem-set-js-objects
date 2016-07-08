@@ -44,4 +44,18 @@
 
 */
 
-// YOUR CODE HERE
+// this was a product of stack overflow. I tried to comment out the parts that I understood the most!
+function parseQueryString(str) {
+    if (typeof str !== 'string') {
+        return {};
+    }
+    str = str.trim().replace(/^\?/, ''); // trims white space and removes special characters
+    if (!str) {
+        return {};
+    }
+    return str.trim().split('&').reduce(function (ret, param) { // replaces & with , trim removes white space from both sides, .split removes the '&' with a comma separating the string into two
+        var parts = param.replace(/\+/g, ' ').split('=');
+        ret[parts[0]] = parts[1] === undefined ? null : decodeURIComponent(parts[1]);
+        return ret;
+    }, {});
+}
