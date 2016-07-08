@@ -33,11 +33,11 @@
 
 */
 function daysUntilDate(date){
-   return Math.round((Date.now() - Date.parse(date))/86400000);
+   return Math.round((Date.now() - Date.parse(date))/86400000); // date now is today's date, data parse will turn the date into a string, divided by 8640000 to change the string to days
 }
 
-function birthdayReminder(){
-    this.name = 'Jack';
-    this.birthday = date;
-    return console.log(name + birthday);
-}
+// function birthdayReminder(){
+//     this.name = 'Jack';
+//     this.birthday = date;
+//     return console.log(name + birthday);
+// }
